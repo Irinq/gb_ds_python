@@ -46,6 +46,8 @@ class Storage:
             self.__inventory.remove(unit)
             return 'Единица техники отправлена на продажу'
 
+
+
 class Item:
     def __init__(self, brand, price):
         try:
