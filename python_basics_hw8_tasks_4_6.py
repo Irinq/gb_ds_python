@@ -110,7 +110,7 @@ class Scanner(Item):
 
     def __init__(self, brand, price):
         super().__init__(brand, price)
-        self.dpi = str(input('Укажите разрешение сканера '))        
+        self.dpi = input('Укажите разрешение сканера ')        
         Scanner.scanner_count += 1
         Scanner.__scanner_totalprice += price
 
