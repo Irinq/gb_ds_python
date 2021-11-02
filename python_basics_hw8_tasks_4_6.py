@@ -48,9 +48,20 @@ class Storage:
 
 class Item:
     def __init__(self, brand, price):
-        self.brand = brand
-        self.price = price
-        self.on = False     
+        try:
+            if isinstance(brand, str):
+                self.brand = brand
+                try:
+                    if isinstance(price, (int, float)):
+                        self.price = price
+                    else:
+                        raise ValueError('Цена должна быть числом')
+                except ValueError as error:
+                        print(error)
+            else:
+                raise ValueError('Бренд должен быть строкой')
+        except ValueError as error:
+            print(error)     
 
     def operate(self):
         print('Устройство работает нормально')
